@@ -1,5 +1,4 @@
 import './hero.css';
-import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import HeroImg from '../../assets/hero.png';
 
@@ -8,8 +7,8 @@ export default function Hero() {
         <section className="home">
             <div className="home-text">
                 <h1>Meet, <span>Eat &</span> <br /> Enjoy The true <br /> taste</h1>
-                <Link to="/explore" className='btn'>Explore Menu<FaArrowRight className='rightArrow' /></Link>
-                <Link className="btn2" to="/order">Order Now</Link>
+                <a href="#" className='btn'>Explore Menu<FaArrowRight className='rightArrow' /></a>
+                <a className="btn2" href="#">Order Now</a>
             </div>
 
             <div className="home-img">

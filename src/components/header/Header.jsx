@@ -1,29 +1,36 @@
 import { FaBars, FaCartPlus, FaHome, FaSearch } from 'react-icons/fa';
 import './header.css';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Header() {
+    const [header2, setHeader] = useState(false);
+
     window.addEventListener("scroll", function () {
-        this.document.querySelector("header").classList.toggle("sticky", window.scrollY > 80);
+        if (window.scrollY > 80) {
+            setHeader(true);
+        }
+        if (window.scrollY <= 80) {
+            setHeader(false);
+        }
     })
 
     return (
-        <header>
-            <Link to="/" className='logo'><FaHome />Honey</Link>
+        <header className={header2 ? "sticky" : null}>
+            <a href="#" className='logo'><FaHome />Honey</a>
 
             <ul className="navlist">
-                <li><Link to="/" className='active'>Home</Link></li>
-                <li><Link to="about">About Us</Link></li>
-                <li><Link to="shop">Our Shop</Link></li>
-                <li><Link to="review">Our Customer</Link></li>
-                <li><Link to="contact">Contact Us</Link></li>
+                <li><a href="#" className='active'>Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#shop">Our Shop</a></li>
+                <li><a href="#review">Our Cushrefmer</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
 
             <div className="nav-icons">
-                <Link to="/search"><FaSearch /></Link>
-                <Link to="/cart"><FaCartPlus /></Link>
+                <a href="#"><FaSearch /></a>
+                <a href="#"><FaCartPlus /></a>
                 <div className="bx-menu bx" id='menu-icon'><FaBars /></div>
             </div>
-        </header>
+        </header >
     )
 }
