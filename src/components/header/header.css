@@ -76,3 +76,27 @@ header.sticky {
     background-color: rgb(41, 41, 41);
     padding: 12px 14%;
 }
+
+@media only screen and (max-width: 600px) {
+    .navlist {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    header {
+        justify-content: left;
+        overflow: hidden;
+    }
+
+    .nav-icons {
+        padding: 10px 20px;
+        margin-left: 12vw;
+    }
+
+    header.sticky {
+        padding: 12px 10vw;
+    }
+}

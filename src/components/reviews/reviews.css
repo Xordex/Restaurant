@@ -59,3 +59,14 @@
     font-size: 13px;
     color: var(--second-color);
 }
+
+@media only screen and (max-width: 600px) {
+    .reviews-container {
+        flex-wrap: wrap;
+        gap: 5vh;
+    }
+
+    .review {
+        padding: 8%;
+    }
+}

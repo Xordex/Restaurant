@@ -61,3 +61,27 @@
     width: 45vw;
     max-width: 700px;
 }
+
+@media only screen and (max-width: 600px) {
+    .home-text h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .home-text .btn2 {
+        color: var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        margin-left: 30px;
+        transition: 0.3s;
+        display: block;
+        width: fit-content;
+        margin-top: 5vh;
+    }
+
+    .home-img {
+        position: absolute;
+        z-index: -1;
+        right: 3vw;
+        top: 50vh;
+    }
+}
