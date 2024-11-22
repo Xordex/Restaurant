@@ -1,9 +1,11 @@
 import { FaBars, FaCartPlus, FaHome, FaSearch } from 'react-icons/fa';
 import './header.css';
 import { useState } from 'react';
+import { FaX } from 'react-icons/fa6';
 
 export default function Header() {
     const [header2, setHeader] = useState(false);
+    const [headerMobile, setHeaderMobile] = useState(false);
 
     window.addEventListener("scroll", function () {
         if (window.scrollY > 80) {
@@ -18,7 +20,8 @@ export default function Header() {
         <header className={header2 ? "sticky" : null}>
             <a href="#" className='logo'><FaHome />Honey</a>
 
-            <ul className="navlist">
+            <ul className={`navlist ${headerMobile && "active"}`}>
+                <FaX className='closebtn' onClick={() => setHeaderMobile(false)} />
                 <li><a href="#" className='active'>Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#shop">Our Shop</a></li>
@@ -29,7 +32,7 @@ export default function Header() {
             <div className="nav-icons">
                 <a href="#"><FaSearch /></a>
                 <a href="#"><FaCartPlus /></a>
-                <div className="bx-menu bx" id='menu-icon'><FaBars /></div>
+                <div className={`bx-menu bx ${headerMobile && "hide"}`} id='menu-icon'><FaBars onClick={() => setHeaderMobile(true)} /></div>
             </div>
         </header >
     )

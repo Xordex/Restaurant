@@ -31,6 +31,10 @@ header {
     gap: 2vw;
 }
 
+.navlist .closebtn {
+    display: none;
+}
+
 .navlist a {
     color: white;
     font-weight: 600;
@@ -79,7 +83,19 @@ header.sticky {
 
 @media only screen and (max-width: 600px) {
     .navlist {
-        display: none;
+        position: absolute;
+        top: -100vh;
+        transition: top 0.7s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+        padding-top: 15vh;
+        left: 0;
+        text-align: center;
+        font-size: 30px;
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
     }
 
     #menu-icon {
@@ -88,7 +104,6 @@ header.sticky {
 
     header {
         justify-content: left;
-        overflow: hidden;
     }
 
     .nav-icons {
@@ -98,5 +113,23 @@ header.sticky {
 
     header.sticky {
         padding: 12px 10vw;
+    }
+
+    .navlist.active {
+        top: 0;
+    }
+
+    .navlist.active .closebtn {
+        display: block;
+        position: fixed;
+        top: 5vh;
+        right: 10vw;
+        z-index: 99999;
+        height: 25px;
+        width: 25px;
+    }
+
+    #menu-icon.hide {
+        z-index: -1;
     }
 }
