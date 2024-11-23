@@ -22,11 +22,11 @@ export default function Header() {
 
             <ul className={`navlist ${headerMobile && "active"}`}>
                 <FaX className='closebtn' onClick={() => setHeaderMobile(false)} />
-                <li><a href="#" className='active'>Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#shop">Our Shop</a></li>
-                <li><a href="#review">Our Cushrefmer</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#" className='active' onClick={() => setHeaderMobile(false)}>Home</a></li>
+                <li><a href="#about" onClick={() => setHeaderMobile(false)}>About Us</a></li>
+                <li><a href="#shop" onClick={() => setHeaderMobile(false)}>Our Shop</a></li>
+                <li><a href="#review" onClick={() => setHeaderMobile(false)}>Our Cushrefmer</a></li>
+                <li><a href="#contact" onClick={() => setHeaderMobile(false)}>Contact Us</a></li>
             </ul>
 
             <div className="nav-icons">
